@@ -1,6 +1,4 @@
 const weatherBlock = document.querySelector("#weather");
-console.log(weatherBlock);
-
 
  function getWeather() {
     const select = document.getElementById('select');
@@ -11,7 +9,6 @@ console.log(weatherBlock);
     fetch(API_URL)
         .then(response => response.json())
         .then(data => {
-          console.log(data);
             const location = data.name;
             const coord = data.coord;
             const temp = Math.round(data.main.temp);
@@ -22,15 +19,14 @@ console.log(weatherBlock);
             const status = data.weather[0].main;
             const icon = data.weather[0].icon;
             
-        
             weatherBlock.innerHTML = `
                 <div class="weather__header">
                     <div class="weather__main">
                         <div class="weather__city">${location}</div>
                         <div class="weather__status">${status}</div>
                         <div class="weather__coord">
-                          <span>latitude: ${coord.lat}</span>
-                          <span>longitude: ${coord.lon} </span>
+                          <span>lat: ${coord.lat}</span>
+                          <span>lon: ${coord.lon} </span>
                         </div>
                     </div>
                     <div class="weather__icon">
@@ -49,7 +45,6 @@ console.log(weatherBlock);
                   </div>
                 </div>  
             `
-      
     })
     .catch(error => {
       console.error(error);
@@ -67,7 +62,7 @@ const API_URL_PRESIDENTS = `https://api.sampleapis.com/presidents/presidents`;
           info.forEach(el => {
             let photoUrl = el.photo;
               if (el.id === 2) { 
-                photoUrl = './lossy-page1-274px-JQA_Photo.tif.jpg';
+                photoUrl = './img/lossy-page1-274px-JQA_Photo.tif.jpg';
               }
             document.getElementById('presidents').insertAdjacentHTML('beforeend', `
               <div class="cards">
@@ -86,12 +81,4 @@ const API_URL_PRESIDENTS = `https://api.sampleapis.com/presidents/presidents`;
               </div> 
               `)
           });
-          console.log(info);
         })
- 
-
-
-
-        
-
-
