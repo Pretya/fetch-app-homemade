@@ -32,12 +32,12 @@ const weatherBlock = document.querySelector("#weather");
                         </div>
                         <div class="weather__status">${status}</div>
                         <div class="weather__coord">
-                          <span>lon: ${coordLat}</span>
-                          <span>lat: ${coordLon}</span>
+                        <i class="fa-solid fa-globe"></i> <span>lon: ${coordLat}</span>
+                        <span>lat: ${coordLon}</span>
                         </div>
                     </div>
                     <div class="weather__icon">
-                        <img src="http://openweathermap.org/img/w/${icon}.png" alt="${icon}">
+                        <img src="https://openweathermap.org/img/w/${icon}.png" alt="${icon}">
                     </div>
                 </div>
                 <div class="weather__box">
