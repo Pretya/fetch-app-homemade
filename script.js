@@ -5,12 +5,15 @@ const weatherBlock = document.querySelector("#weather");
     const city = select.value;
     const API_KEY = '71cd29172858c1aa8d37ea57473d5557';
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
-    
+        
     fetch(API_URL)
         .then(response => response.json())
         .then(data => {
+          console.log(data);
             const location = data.name;
-            const coord = data.coord;
+            const country = data.sys.country;
+            const coordLon = data.coord.lon;
+            const coordLat = data.coord.lat;
             const temp = Math.round(data.main.temp);
             const tempMin = Math.round(data.main.temp_min);
             const tempMax = Math.round(data.main.temp_max);
@@ -18,15 +21,19 @@ const weatherBlock = document.querySelector("#weather");
             const wind = data.wind.speed;
             const status = data.weather[0].main;
             const icon = data.weather[0].icon;
-            
+            const countryCode = `${country}`;
+            const flagUrl = `https://flagcdn.com/w160/${countryCode.toLowerCase()}.png`;
             weatherBlock.innerHTML = `
                 <div class="weather__header">
                     <div class="weather__main">
-                        <div class="weather__city">${location}</div>
+                        <div class="weather__city">
+                          ${location} 
+                          <img class="country__flag" src="${flagUrl}" alt="${countryCode}" />
+                        </div>
                         <div class="weather__status">${status}</div>
                         <div class="weather__coord">
-                          <span>lat: ${coord.lat}</span>
-                          <span>lon: ${coord.lon} </span>
+                          <span>lon: ${coordLat}</span>
+                          <span>lat: ${coordLon}</span>
                         </div>
                     </div>
                     <div class="weather__icon">

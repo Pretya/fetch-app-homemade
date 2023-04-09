@@ -34,8 +34,6 @@ select {
     border-radius: 10px 0 10px;
 }
 
-
-
 .weather__header {
     display: flex;
 }
@@ -49,7 +47,9 @@ select {
     font-weight: 700;
     margin-bottom: 10px;
 }
-
+.country__flag {
+    width: 50px;
+}
 .weather__status,
 .weather__coord {
     font-size: 20px;
@@ -65,7 +65,7 @@ select {
 }
 
 .weather__icon img {
-    min-width: 80px;
+    min-width: 70px;
     height: auto;
 }
 
@@ -86,7 +86,6 @@ select {
     color: red;
 }
 
-/* Food */
 #presidents {
     margin: 20px 0;
     display: flex;
@@ -128,8 +127,11 @@ h2 {
         padding: 10px;
         min-width: 300px;
     }
+    .country__flag {
+        width: 35px;
+    }
   }
-  @media (max-width:576px){
+@media (max-width:576px){
     .weather {
         padding: 10px;
         min-width: 300px;
@@ -155,5 +157,8 @@ h2 {
         justify-content: center;
         margin-top: 10px;
         gap: 20px;  
+    }
+    .country__flag {
+        width: 20px;
     }
   }
