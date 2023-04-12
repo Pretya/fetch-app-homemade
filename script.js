@@ -1,8 +1,5 @@
 
-
- 
-
-const API_URL_PRESIDENTS = `https://api.sampleapis.com/presidents/presidents`;
+const API_URL_PRESIDENTS = 'https://api.sampleapis.com/presidents/presidents';
     fetch(API_URL_PRESIDENTS)
         .then(response => response.json())
         .then(info => {
