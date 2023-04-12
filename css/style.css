@@ -6,84 +6,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.weather__title {
-    font-size: 35px;
-    
-}
+
 .wrapper {
-    display: flex;
     justify-content: center;
-    margin-top: 40px;
-    gap: 20px;  
-}
-.weather {
-    background-color: rgba(65, 134, 130, 0.59);
-    font-family: 'Roboto', sans-serif;
-    padding: 20px;
-    min-width: 450px;
-    box-shadow: 0 0 25px rgb(50, 97, 77);
-    border-radius: 20px;
-    text-align: left; 
-}
-
-select {
-    width: 120px;
-    height: 40px;
-    background-color: rgba(65, 134, 130, 0.59);
-    box-shadow: 0 0 15px rgb(50, 97, 77);
-    border-radius: 10px 0 10px;
-}
-
-.weather__header {
-    display: flex;
-}
-
-.weather__main {
-    flex: 1 1 auto;
-}
-
-.weather__city {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-.country__flag {
-    width: 50px;
-}
-.weather__status,
-.weather__coord {
-    font-size: 20px;
-    margin-bottom: 7px;
-    font-weight: 700;
-}
-
-
-.weather__temp {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.weather__icon img {
-    min-width: 70px;
-    height: auto;
-}
-
-.weather__box {
-    display: flex;
-    justify-content: space-between;
-}
-.weather__wind-speed {
-    font-size: 25px;
-}
-.weather__temp::after,
-.weather__temp-min::after, 
-.weather__temp-max::after, 
-.weather__feels-like::after {
-    display: inline-block;
-    margin-left: 5px;
-    content: '°C';
-    color: red;
+    gap: 10px;  
 }
 
 #presidents {
@@ -96,7 +22,7 @@ select {
     gap: 30px;
 }
 h2 {
-   margin-top: 100px;
+   margin-top: 30px;
    font-size: 35px; 
 }
 .card__name {
@@ -111,6 +37,8 @@ h2 {
   
 }
 .cards {
+    max-width: 25%;
+    height: 435px;
     background-color: rgba(65, 134, 130, 0.59);
     padding: 10px;
     box-shadow: 0 0 25px rgb(50, 97, 77);
@@ -123,42 +51,22 @@ h2 {
     box-shadow: 0 0 25px rgb(27, 43, 36);
 }
 @media (max-width:768px){
-    .weather {
+    .cards {
         padding: 10px;
-        min-width: 300px;
+        min-width: 15%;
     }
-    .country__flag {
-        width: 35px;
+    .card__img {
+        width: 150px;
+        height: 200px;
     }
   }
 @media (max-width:576px){
-    .weather {
+    .cards {
         padding: 10px;
-        min-width: 300px;
+        min-width: 15%;
     }
-    .weather__city {
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-    .weather__title {
-        font-size: 25px;
-        
-    }
-    .weather__status,
-    .weather__coord {
-        font-size: 15px;
-        margin-bottom: 3px;
-        font-weight: 700;
-    }
-    .wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 10px;
-        gap: 20px;  
-    }
-    .country__flag {
-        width: 20px;
+    .card__img {
+        width: 100px;
+        height: 170px;
     }
   }
